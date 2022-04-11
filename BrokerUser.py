@@ -1,5 +1,4 @@
 from selenium import webdriver
-import chromedriver_autoinstaller
 from selenium.webdriver.common.by import By
 import time
 from settings import CLIENT_ID, LOGIN_ID, STRING
@@ -131,8 +130,7 @@ def addPerson(fname, lname, email, city, state, zip, recordType):
 
 
 # Set driver to use Chrome
-chromedriver_autoinstaller.install()
-myDriver = webdriver.Chrome()
+myDriver = webdriver.Firefox()
 myDriver.maximize_window()
 
 # Launch URL to open the desired website
