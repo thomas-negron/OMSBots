@@ -3,6 +3,7 @@ from selenium.webdriver.common.by import By
 import time
 from settings import CLIENT_ID, LOGIN_ID, STRING
 import pandas as pd
+import geckodriver_autoinstaller
 
 
 def addBroker(entity, city, state, zip):
@@ -129,7 +130,8 @@ def addPerson(fname, lname, email, city, state, zip, recordType):
     time.sleep(1)
 
 
-# Set driver to use Chrome
+# Set driver to use Firefox
+geckodriver_autoinstaller.install();
 myDriver = webdriver.Firefox()
 myDriver.maximize_window()
 
