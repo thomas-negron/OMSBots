@@ -130,7 +130,7 @@ def addPerson(fname, lname, email, city, state, zip, recordType):
 
 
 # Set driver to use Firefox
-myDriver = webdriver.Firefox(executable_path="/home/OMSBots")
+myDriver = webdriver.Firefox(executable_path="/home/OMSBots/geckodriver.exe")
 myDriver.maximize_window()
 
 # Launch URL to open the desired website
