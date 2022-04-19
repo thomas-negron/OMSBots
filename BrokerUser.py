@@ -139,7 +139,7 @@ driver = webdriver.Firefox(options=options)
 
 firefox_options = webdriver.FirefoxOptions()
 driver = webdriver.Remote(
-    command_executor='http://www.example.com',
+    command_executor='http://10.116.0.2:4444',
     options=firefox_options
 )
 driver.get("http://www.google.com")
