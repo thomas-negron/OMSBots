@@ -3,6 +3,7 @@ from selenium.webdriver.common.by import By
 import time
 from settings import CLIENT_ID, LOGIN_ID, STRING
 import pandas as pd
+from selenium.webdriver.firefox.options import Options
 
 def addBroker(entity, city, state, zip):
     # Click 'Add Organization' button
@@ -131,6 +132,8 @@ def addPerson(fname, lname, email, city, state, zip, recordType):
 # Set driver to use Firefox
 #driver = webdriver.Firefox(service=Service(GeckoDriverManager().install()))
 #myDriver = webdriver.Firefox(executable_path="/home/OMSBots/geckodriver.exe")
+options.binary_location = r"C:home/OMSBots/firefox.exe"
+myDriver = webdriver.Firefox(options=options, executable_path="C:home/OMSBots/geckodriver.exe")
 
 firefox_options = webdriver.FirefoxOptions()
 myDriver = webdriver.Remote(
