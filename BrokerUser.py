@@ -133,10 +133,13 @@ def addPerson(fname, lname, email, city, state, zip, recordType):
 # Set driver to use Firefox
 #driver = webdriver.Firefox(service=Service(GeckoDriverManager().install()))
 #myDriver = webdriver.Firefox(executable_path="/home/OMSBots/geckodriver.exe")
-firefox_options = webdriver.FirefoxOptions()
+options = webdriver.FirefoxOptions()
+options.binary_location = r"C:/usr/bin/firefox.exe"
+mDriver = webdriver.Firefox(executable_path=r'C:/home/OMSBots/geckodriver.exe', options=options)
+
 myDriver = webdriver.Remote(
     command_executor='http://10.116.0.2:4444',
-    options=firefox_options
+    options=options
 )
 myDriver.get("http://www.google.com")
 
