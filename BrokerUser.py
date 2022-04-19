@@ -3,6 +3,7 @@ from selenium.webdriver.common.by import By
 import time
 from settings import CLIENT_ID, LOGIN_ID, STRING
 import pandas as pd
+from selenium.webdriver.firefox.options import Options
 
 
 def addBroker(entity, city, state, zip):
@@ -132,12 +133,17 @@ def addPerson(fname, lname, email, city, state, zip, recordType):
 # Set driver to use Firefox
 #driver = webdriver.Firefox(service=Service(GeckoDriverManager().install()))
 #myDriver = webdriver.Firefox(executable_path="/home/OMSBots/geckodriver.exe")
-ICapabilities desiredCapabilities = DesiredCapabilities.HtmlUnit();
-IWebDriver driver = new RemoteWebDriver(desiredCapabilities);
+options = Options()
+options.headless = True
+driver = webdriver.Firefox(options=options)
 
-driver.Navigate().GoToUrl("http://www.google.com/");
+firefox_options = webdriver.FirefoxOptions()
+driver = webdriver.Remote(
+    command_executor='http://www.example.com',
+    options=firefox_options
+)
+driver.get("http://www.google.com")
 
-a = driver.PageSource;
 myDriver.maximize_window()
 
 # Enter Client ID
