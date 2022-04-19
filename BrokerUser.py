@@ -3,8 +3,6 @@ from selenium.webdriver.common.by import By
 import time
 from settings import CLIENT_ID, LOGIN_ID, STRING
 import pandas as pd
-from selenium.webdriver.firefox.service import Service
-from webdriver_manager.firefox import GeckoDriverManager
 
 
 def addBroker(entity, city, state, zip):
@@ -132,12 +130,15 @@ def addPerson(fname, lname, email, city, state, zip, recordType):
 
 
 # Set driver to use Firefox
-driver = webdriver.Firefox(service=Service(GeckoDriverManager().install()))
+#driver = webdriver.Firefox(service=Service(GeckoDriverManager().install()))
 #myDriver = webdriver.Firefox(executable_path="/home/OMSBots/geckodriver.exe")
-myDriver.maximize_window()
-
-# Launch URL to open the desired website
+firefox_options = webdriver.FirefoxOptions()
+myDriver = webdriver.Remote(
+    command_executor='http://www.example.com',
+    options=firefox_options
+)
 myDriver.get("https://preprod.oms.oneshield.com/Login")
+myDriver.maximize_window()
 
 # Enter Client ID
 myDriver.find_element(By.XPATH, '//*[@id="TanentID"]').send_keys(CLIENT_ID)
