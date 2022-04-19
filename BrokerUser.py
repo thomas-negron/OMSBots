@@ -132,12 +132,12 @@ def addPerson(fname, lname, email, city, state, zip, recordType):
 # Set driver to use Firefox
 #driver = webdriver.Firefox(service=Service(GeckoDriverManager().install()))
 #myDriver = webdriver.Firefox(executable_path="/home/OMSBots/geckodriver.exe")
-firefox_options = webdriver.FirefoxOptions()
-myDriver = webdriver.Remote(
-    command_executor='http://www.example.com',
-    options=firefox_options
-)
-myDriver.get("https://preprod.oms.oneshield.com/Login")
+ICapabilities desiredCapabilities = DesiredCapabilities.HtmlUnit();
+IWebDriver driver = new RemoteWebDriver(desiredCapabilities);
+
+driver.Navigate().GoToUrl("http://www.google.com/");
+
+a = driver.PageSource;
 myDriver.maximize_window()
 
 # Enter Client ID
