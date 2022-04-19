@@ -134,7 +134,7 @@ def addPerson(fname, lname, email, city, state, zip, recordType):
 #myDriver = webdriver.Firefox(executable_path="/home/OMSBots/geckodriver.exe")
 options = Options();
 options.binary_location = r"C:home/OMSBots/firefox.exe"
-myDriver = webdriver.Firefox(options=options, executable_path="C:home/OMSBots/geckodriver.exe")
+myDriver = webdriver.Firefox(options=options, executable_path="C:home/OMSBots/geckodriver")
 
 firefox_options = webdriver.FirefoxOptions()
 myDriver = webdriver.Remote(
