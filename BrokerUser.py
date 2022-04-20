@@ -135,6 +135,7 @@ def addPerson(fname, lname, email, city, state, zip, recordType):
 #driver = webdriver.Firefox(service=Service(GeckoDriverManager().install()))
 #myDriver = webdriver.Firefox(executable_path="/home/OMSBots/geckodriver.exe")
 options = webdriver.FirefoxOptions()
+options.add_argument("--headless")
 options.binary_location = r"/usr/bin/firefox"
 myDriver = webdriver.Firefox(service=Service(GeckoDriverManager().install()))
 
