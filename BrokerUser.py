@@ -5,6 +5,7 @@ from settings import CLIENT_ID, LOGIN_ID, STRING
 import pandas as pd
 from webdriver_manager.firefox import GeckoDriverManager
 from selenium.webdriver.firefox.options import Options
+from selenium.webdriver.chrome.service import Service
 
 def addBroker(entity, city, state, zip):
     # Click 'Add Organization' button
